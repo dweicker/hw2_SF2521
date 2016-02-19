@@ -1,0 +1,34 @@
+We have the general scheme 
+\begin{align*}
+U^{n+1}  &= Q(t_n) U^n + \Delta t F^n \\
+U^0 &= g
+\end{align*}
+where $U^n \in \mathbb{R}^d$. 
+
+\subsection{Duhamel’s Principle}
+We are given the following discrete Duhamel’s Principle:
+\begin{align}
+U^n = S_h(t_n,0)g+\Delta t \sum_{\nu = 0}^{n-1} S_h(t_n , t_{\nu + 1}) F^{\nu} , 
+\end{align}
+where $t_n = n \Delta t$, and 
+\begin{align*}
+S_h(t,t) &= I, \quad t \in \mathbb{R} \\
+S_h(t_{n+1,t_{\mu}}) &= Q(t_n)S_h(t_n,t_{\mu}).
+\end{align*}
+\\
+We begin by showing that (1) holds by induction.
+
+Base Case: $n = 0$
+\begin{align*}
+U^0 &= S_h(0,0)g+\Delta t \sum_{\nu = 0}^{-1} S_h(0 , t_{\nu + 1}) F^{\nu} \\
+& = 0
+\end{align*}
+which fits the general scheme. 
+Now we assume that the (1) fits the general scheme at step $n$, and we want to show that this implies that it fits for step $n+1$.
+\begin{align*}
+U^{n+1} &= S_h(t_{n+1},0)g+\Delta t \sum_{\nu = 0}^{n} S_h(t_{+1}n , t_{\nu + 1}) F^{\nu} \\
+&= Q(t_n)S_h(t_n,0)g + \Delta t Q(t_n) \sum_{\nu = 0}^{n-1} S_h(t_n , t_{\nu + 1}) F^{\nu} + S_h(t_{n+1} , t_{n + 1}) F^{n} \\ &= Q(t_n)(S_h(t_n,0)g + \Delta t \sum_{\nu = 0}^{n-1} S_h(t_n , t_{\nu + 1}) F^{\nu})+F^{n} \\ 
+&= Q(t_n)U_n+F^{n} \quad \text{by induction assumption} 
+\end{align*}
+which fits our general scheme.
+\subsection{Bound in the $h$-norm}
