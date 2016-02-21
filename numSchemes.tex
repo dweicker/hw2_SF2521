@@ -28,7 +28,22 @@ Now we assume that the (1) fits the general scheme at step $n$, and we want to s
 \begin{align*}
 U^{n+1} &= S_h(t_{n+1},0)g+\Delta t \sum_{\nu = 0}^{n} S_h(t_{+1}n , t_{\nu + 1}) F^{\nu} \\
 &= Q(t_n)S_h(t_n,0)g + \Delta t Q(t_n) \sum_{\nu = 0}^{n-1} S_h(t_n , t_{\nu + 1}) F^{\nu} + S_h(t_{n+1} , t_{n + 1}) F^{n} \\ &= Q(t_n)(S_h(t_n,0)g + \Delta t \sum_{\nu = 0}^{n-1} S_h(t_n , t_{\nu + 1}) F^{\nu})+F^{n} \\ 
-&= Q(t_n)U_n+F^{n} \quad \text{by induction assumption} 
+&= Q(t_n)U_n+F^{n} %\quad \text{by induction assumption} 
 \end{align*}
 which fits our general scheme.
 \subsection{Bound in the $h$-norm}
+We now wish to show that 
+\begin{align*}
+||S_h(t_{\nu+1},t_{\nu})||_h \leq Ke^{ah} \implies ||U^n||_h \leq K(e^{at_n} ||g||_h + \int_0^{t_n} e^{a(t_n-s)} ds \max_{0\leq \nu \leq n-1} ||F^{\nu}||_h
+\end{align*}
+Taking $||\cdot ||_h$ of both sides of (1), then by Cachy-Schwartz inequality, we have
+\begin{align*}
+||U^n||_h &= ||S_h(t_n,0)g+\Delta t \sum_{\nu = 0}^{n-1} S_h(t_n , t_{\nu + 1}) F^{\nu} ||_h \\
+&\leq ||S_h(t_n,0)||_h||g||_h+||\Delta t||_h \sum_{\nu = 0}^{n-1} ||S_h(t_n , t_{\nu + 1})||_h || F^{\nu} ||_h \\
+&\leq Ke^{at_n}||g||_h+||\Delta t||_h \sum_{\nu = 0}^{n-1} ||S_h(t_n , t_{\nu + 1})||_h || F^{\nu} ||_h\\
+&\leq Ke^{at_n}||g||_h+\Delta t \sum_{\nu = 0}^{n-1} Ke^{a(t_n - t_{\nu+1})} || F^{\nu} ||_h\\ 
+\text{we notice that} \enspace & \Delta t \sum_{\nu = 0}^{n-1} Ke^{a(t_n - t_{\nu+1})} \enspace \text{is a right Remman sum of a strictly decreasing function, thus} \\
+&\leq Ke^{at_n}||g||_h+ K\int_0^{t_n} e^{a(t_n - s)} ds || F^{\nu} ||_h\\ 
+&\leq K(e^{at_n}||g||_h+ \int_0^{t_n} e^{a(t_n - s)} ds \max_{0\leq \nu \leq n-1} ||F^{\nu}||_h)
+\end{align*}
+IS a POSITIVE??
