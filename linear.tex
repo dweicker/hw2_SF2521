@@ -1,0 +1,21 @@
+The shallow water equation can be written in quasilinear form as \begin{align*}
+u_t + f'(u) u_x = 0
+\end{align*}
+where $ u = (h,hv)^T $ and 
+\begin{align*}
+f'(u) = \begin{pmatrix}
+0 & 1 \\
+-(\frac{u_2}{u_1})^2 + gu_1 & 2 (\frac{u_2}{u_1})
+\end{pmatrix}
+\end{align*}
+Now, to make this system linear we must simply pick a constant state $(h_0,v_0)$ which is consistent with the boundary and initial conditions. We choose $(h_0,v_0)$ at $x=5$ and $t=0$. We can now compute $(h_0,v_0)$ using the initial condition. We get $(h_0,v_0) = (1.1,0)$. Thus we have 
+\begin{align*}
+f'(u) = \begin{pmatrix}
+0 & 1 \\
+1.1g & 0
+\end{pmatrix} = \begin{pmatrix}
+0 & 1 \\
+10.571 & 0
+\end{pmatrix}
+\end{align*}
+We can see easily $f'(u)$ has eigenvalues $\lambda_{1,2} = \pm \sqrt{10.571} = \pm 3.2513$ which are real. It also has a full set of eigenvectors i.e. $(1,3.2513)^T$ and $(-1,3.2513)$. This together confirm that the linear problem is hyperbolic. 
