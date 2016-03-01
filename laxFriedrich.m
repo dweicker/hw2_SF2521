@@ -1,6 +1,6 @@
 function [ ] = laxFriedrich( xSteps, tSteps )
 %Problem 2.1 Lax-Friedrich method
-T = 4;%pick final time
+T = 10;%pick final time
 %given variables
 L = 10;
 H = 1;
