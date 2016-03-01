@@ -46,8 +46,8 @@ where
 3.1 & 0 \\
 0 & -3.1
 \end{pmatrix},  \text{and} V^{-1} = \begin{pmatrix}
--0.5 & 0.1613 \\
-0.5 & 0.1613
+0.5 & 0.1613 \\
+-0.5 & 0.1613
 \end{pmatrix}
 \end{align*} and initial condition
 \begin{align*}
@@ -62,6 +62,31 @@ r_t + Dr_x = 0
 \end{align*}
 and 
 \begin{align*}
-r(x,0) = V^{-1} q(x,0)
+r(x,0) = V^{-1} q(x,0) = \frac{1}{2} \begin{pmatrix}
+H + \epsilon e^{-(x-L/2)^2/w^2} \\
+-H - \epsilon e^{-(x-L/2)^2/w^2}
+\end{pmatrix} 
 \end{align*}
-
+From Lavengen, we know the solutions of this system are 
+\begin{align*}
+	r_1(x,t)&=r_n(x+\lambda_1t,0)=\frac{1}{2} (H + \epsilon e^{-(x+3.1t-L/2)^2/w^2}) \\
+	\text{and} \quad r_2(x,t)&=r_2(x+\lambda_2t,0)= \frac{1}{2}(-H - \epsilon e^{-(x-3.1t-L/2)^2/w^2})
+\end{align*} 
+Finally switching back to $q$, we get 
+\begin{align*}
+q(x,t) = Vr(x,t) &= \frac{1}{2} \begin{pmatrix}
+H + \epsilon e^{-(x+3.1t-L/2)^2/w^2} +H + \epsilon e^{-(x-3.1t-L/2)^2/w^2} \\
+3.1(H + \epsilon e^{-(x+3.1t-L/2)^2/w^2} -H - \epsilon e^{-(x-3.1t-L/2)^2/w^2})
+\end{pmatrix} \\
+&= \frac{1}{2}\begin{pmatrix}
+ 2H + \epsilon e^{-(x+3.1t-L/2)^2/w^2} + \epsilon e^{-(x-3.1t-L/2)^2/w^2} \\
+3.1( \epsilon e^{-(x+3.1t-L/2)^2/w^2} - \epsilon e^{-(x-3.1t-L/2)^2/w^2})
+\end{pmatrix}
+\end{align*} 
+Now, simply plugging in $t=1$ we get
+\begin{align*}
+q(x,1) = \frac{1}{2}\begin{pmatrix}
+ 2H + \epsilon e^{-(x+3.1-L/2)^2/w^2} + \epsilon e^{-(x-3.1-L/2)^2/w^2} \\
+3.1( \epsilon e^{-(x+3.1-L/2)^2/w^2} - \epsilon e^{-(x-3.1-L/2)^2/w^2})
+\end{pmatrix}
+\end{align*}
