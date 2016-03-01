@@ -20,21 +20,23 @@ We begin by showing that (1) holds by induction.
 
 Base Case: $n = 0$
 \begin{align*}
-U^0 &= S_h(0,0)g+\Delta t \sum_{\nu = 0}^{-1} S_h(0 , t_{\nu + 1}) F^{\nu} \\
-& = 0
+U^0 & = g \\
+&= S_h(0,0)g+\Delta t 0 \\
+&= S_h(0,0)g+\Delta t \sum_{\nu = 0}^{-1} S_h(0 , t_{\nu + 1}) F^{\nu}
 \end{align*}
-which fits the general scheme. 
-Now we assume that the (1) fits the general scheme at step $n$, and we want to show that this implies that it fits for step $n+1$.
+which fits the Duhamel. 
+Now we assume that the discrete Duhamel's Principle fits the general scheme at step $n$, and we want to show that this implies that it fits for step $n+1$.
 \begin{align*}
-U^{n+1} &= S_h(t_{n+1},0)g+\Delta t \sum_{\nu = 0}^{n} S_h(t_{+1}n , t_{\nu + 1}) F^{\nu} \\
-&= Q(t_n)S_h(t_n,0)g + \Delta t Q(t_n) \sum_{\nu = 0}^{n-1} S_h(t_n , t_{\nu + 1}) F^{\nu} + S_h(t_{n+1} , t_{n + 1}) F^{n} \\ &= Q(t_n)(S_h(t_n,0)g + \Delta t \sum_{\nu = 0}^{n-1} S_h(t_n , t_{\nu + 1}) F^{\nu})+F^{n} \\ 
-&= Q(t_n)U_n+F^{n} %\quad \text{by induction assumption} 
+U^{n+1} &= Q(t_n)U_n+F^{n} \\ 
+&= Q(t_n)(S_h(t_n,0)g + \Delta t \sum_{\nu = 0}^{n-1} S_h(t_n , t_{\nu + 1}) F^{\nu})+F^{n} \quad \text{by induction assumption} \\ 
+&= Q(t_n)S_h(t_n,0)g + \Delta t Q(t_n) \sum_{\nu = 0}^{n-1} S_h(t_n , t_{\nu + 1}) F^{\nu} + S_h(t_{n+1} , t_{n + 1}) F^{n} \\ 
+&= S_h(t_{n+1},0)g+\Delta t \sum_{\nu = 0}^{n} S_h(t_{n+1} , t_{\nu + 1}) F^{\nu}
 \end{align*}
-which fits our general scheme.
+which fits Duhamel.
 \subsection{Bound in the $h$-norm}
 We now wish to show that 
-\begin{align*}
-||S_h(t_{\nu+1},t_{\nu})||_h \leq Ke^{ah} \implies ||U^n||_h \leq K(e^{at_n} ||g||_h + \int_0^{t_n} e^{a(t_n-s)} ds \max_{0\leq \nu \leq n-1} ||F^{\nu}||_h
+\begin{align*} 
+||S_h(t_{\nu+1},t_{\nu})||_h \leq Ke^{a \Delta t} \implies ||U^n||_h \leq K(e^{at_n} ||g||_h + \int_0^{t_n} e^{a(t_n-s)} ds \max_{0\leq \nu \leq n-1} ||F^{\nu}||_h
 \end{align*}
 Taking $||\cdot ||_h$ of both sides of (1), then by Cauchy-Schwartz inequality, we have
 \begin{align*}
@@ -48,8 +50,7 @@ Taking $||\cdot ||_h$ of both sides of (1), then by Cauchy-Schwartz inequality, 
 \end{align*}
 IS a POSITIVE??
 \subsection{a Value}
-If $a = h^{-1/2}$, then we would have $||S_h(t_{\nu + 1}, t_{\nu})||_h \leq Ke^{\sqrt{h}}$. Plugging this into our second inequality, we obtain, 
+If $a = \Delta t^{-1/2}$, then we would have $||S_h(t_{\nu + 1}, t_{\nu})||_h \leq Ke^{n\sqrt{\Delta t}}$. Plugging this into our second inequality, we obtain, 
 \begin{align*}
-||U^n||_h\leq K(e^{\sqrt{t_n}}||g||_h+ \int_0^{t_n} e^{\sqrt{t_n - s}} ds \max_{0\leq \nu \leq n-1} ||F^{\nu}||_h)
+||U^n||_h\leq K(e^{n\sqrt{t_n}}||g||_h+ \int_0^{t_n} e^{n\sqrt{t_n - s}} ds \max_{0\leq \nu \leq n-1} ||F^{\nu}||_h)
 \end{align*}
-I dont get the hint
