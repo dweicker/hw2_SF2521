@@ -1,2 +1,19 @@
+In this section, we are going to solve numerically the time-dependent shallow water model in one spatial dimension. At first, we have solid walls at the boundary and thus the waves should be reflected. We will also linearize this non linear model and compare the solution of the linear problem with that of the non linear one. Finally, we will impose non-reflecting boundary conditions.
+
+The shallow water model is given by :
+\begin{align*}
+h_t+(hv)_x &= 0\\
+(hv)_t + (hv^2+\frac{1}{2}gh^2)_x &= 0\\
+\text{on }(x,t)\in [0,L]\times [0,\infty)
+\end{align*}
+
+The initial condition is given by :
+\begin{align*}
+h(x,0) &= H+\epsilon e^{-(x-L/2)^2/w^2}\\
+v(x,0) &= 0
+\end{align*}
+
+Regarding the boundary condition, we imposed solid walls on $x=0$ and $x=L$. We will see in the next section how that is implemented in practice.
+
 \subsection{Numerical solution}
 bla
