@@ -1,4 +1,4 @@
-function [cons] = adv(xSteps,ratio,Tend)
+function [Q,x,t,cons] = adv(xSteps,ratio,Tend,alpha,epsilon)
 %Problem 2.1 Lax-Friedrich method
 
 %given variables
@@ -6,7 +6,6 @@ L = 10;
 H = 1;
 g = 9.61;
 w = 0.4;
-epsilon = 0.1;
 %calculate number of steps
 dx = L/xSteps;
 dt = ratio*dx;
@@ -14,7 +13,7 @@ tSteps = round(Tend/dt);
 %flux function
 f = @(u) [ u(2) , u(2)^2./u(1) + 0.5*g*u(1).^2];
 %Lax-Friedrich flux function
-FLxF = @(u2,u1) (0.5*(f(u2)+f(u1) - dx/dt*(u2-u1)));
+FLxF = @(u2,u1) (0.5*(f(u2)+f(u1) - alpha*dx/dt*(u2-u1)));
 
 %Initial Conditions
 Q = zeros(xSteps+2, 2*(tSteps+1));
@@ -35,9 +34,9 @@ for i = 1:tSteps+1
         Q(j,2*i+1:2*i+2) = Q(j,2*i-1:2*i) - dt/dx * (F(j,:)-F(j-1,:));
     end
 end
-mesh(Q(:,2*(1:tSteps+1)-1))
-%mesh(0:dx:L, (0:dt:T)', Q(:,2*(1:tSteps+1)-1))
-rotate3d on
-cons = sum(Q(2:xSteps+1,2*(1:tSteps+1)-1));
+x = linspace(0,L,xSteps+1);
+t = linspace(0,Tend,tSteps+1);
+Q = Q(1:end-1,2*(1:tSteps+1)-1);
+cons = sum(Q(:,:))/(xSteps+1);
 end
 

@@ -1,4 +1,4 @@
-function [Tend] = noReflex(xSteps,ratio,Tend)
+function [Q,x,t,cons] = noReflex(xSteps,ratio,Tend)
 %Problem 2.1 Lax-Friedrich method
 close all;
 %given variables
@@ -33,11 +33,10 @@ for i = 1:tSteps+1
         Q(j,2*i+1:2*i+2) = Q(j,2*i-1:2*i) - dt/dx * (F(j,:)-F(j-1,:));
     end
 end
-mesh(Q(:,2*(1:tSteps+1)-1))
-%mesh(0:dx:L, (0:dt:T)', Q(:,2*(1:tSteps+1)-1))
-rotate3d on
-%figure;
-%plot([Q(:,end-401),Q(:,end-301)]);
+x = linspace(0,L,xSteps+1);
+t = linspace(0,Tend,tSteps+1);
+Q = Q(1:end-1,2*(1:tSteps+1)-1);
+cons = sum(Q(:,:))/(xSteps+1);
 end
 
 
