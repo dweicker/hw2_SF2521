@@ -30,12 +30,12 @@ We can see easily $f'(u)$ has eigenvalues $\lambda_{1,2} = \pm \sqrt{9.61} = \pm
 \subsection{Analytical Solution}
 We have the PDE, 
 \begin{align*}
-u_t + f'(u) u_x = 0
+q_t + f'(u) q_x = 0
 \end{align*}
 which we have shown can be written as 
 \begin{align*}
-u_t + V D V^{-1} u_x &= 0 \\
-\implies V^{-1} u_t + D V^{-1} u_x &= 0
+q_t + V D V^{-1} q_x &= 0 \\
+\implies V^{-1} q_t + D V^{-1} q_x &= 0
 \end{align*}
 where 
 \begin{align*}
@@ -69,7 +69,7 @@ H + \epsilon e^{-(x-L/2)^2/w^2} \\
 \end{align*}
 From Lavengen, we know the solutions of this system are 
 \begin{align*}
-	r_1(x,t)&=r_n(x+\lambda_1t,0)=\frac{1}{2} (H + \epsilon e^{-(x+3.1t-L/2)^2/w^2}) \\
+	r_1(x,t)&=r_1(x+\lambda_1t,0)=\frac{1}{2} (H + \epsilon e^{-(x+3.1t-L/2)^2/w^2}) \\
 	\text{and} \quad r_2(x,t)&=r_2(x+\lambda_2t,0)= \frac{1}{2}(-H - \epsilon e^{-(x-3.1t-L/2)^2/w^2})
 \end{align*} 
 Finally switching back to $q$, we get 
