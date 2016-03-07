@@ -4,8 +4,7 @@
 \BOOKMARK [2][-]{subsection.1.3}{a Value}{section.1}% 4
 \BOOKMARK [1][-]{section.2}{Shallow water model}{}% 5
 \BOOKMARK [2][-]{subsection.2.1}{Numerical solution}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.2}{Linearization}{section.2}% 7
-\BOOKMARK [2][-]{subsection.2.3}{Non-reflecting boundary conditions}{section.2}% 8
-\BOOKMARK [1][-]{section.3}{Linerization}{}% 9
-\BOOKMARK [2][-]{subsection.3.1}{Analytical Solution}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.2}{Numerical Solution of the Linear Problem}{section.3}% 11
+\BOOKMARK [1][-]{section.3}{Linerization}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Analytical Solution}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{Numerical Solution of the Linear Problem}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.3}{Non-reflecting boundary conditions}{section.3}% 10

@@ -92,3 +92,14 @@ q(x,1) = \frac{1}{2}\begin{pmatrix}
 \end{align*}
 
 \subsection{Numerical Solution of the Linear Problem}
+To compare the results from the non-linear and linear problems, we compare the numerical solutions of the problems using the same method. The code for the numerical solution of the linear problem is almost exactly the same as for the linear problem, except the flux $f$. For the linear problem we compute the flux function from the information above. 
+\begin{align*}
+f'(u) = \begin{pmatrix}
+0 & 1 \\
+g & 0
+\end{pmatrix} \rightarrow 
+f(u) = \begin{pmatrix}
+u_2 \\
+gu_1
+\end{pmatrix}
+\end{align*}

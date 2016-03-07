@@ -1,4 +1,4 @@
-function [cons] = advLinear(xSteps,ratio,Tend)
+function [Q,x,t,cons] = advLinear(xSteps,ratio,Tend)
 %Problem 2.1 Lax-Friedrich method
 
 %given variables
@@ -35,9 +35,17 @@ for i = 1:tSteps+1
         Q(j,2*i+1:2*i+2) = Q(j,2*i-1:2*i) - dt/dx * (F(j,:)-F(j-1,:));
     end
 end
-mesh(Q(:,2*(1:tSteps+1)-1))
+close all;
+x = linspace(0,L,xSteps+1);
+t = linspace(0,Tend,tSteps+1);
+Q = Q(1:end-1,2*(1:tSteps+1)-1);
+cons = sum(Q(:,:))/(xSteps+1);
+mesh(t,x,Q);%Q(:,2*(1:tSteps+1)-1))
+xlabel('Time (s)')
+ylabel('x (m)')
+zlabel('Height (m)')
 %mesh(0:dx:L, (0:dt:T)', Q(:,2*(1:tSteps+1)-1))
 rotate3d on
-cons = sum(Q(2:xSteps+1,2*(1:tSteps+1)-1));
+%cons = sum(Q(2:xSteps+1,2*(1:tSteps+1)-1));
 end
 
