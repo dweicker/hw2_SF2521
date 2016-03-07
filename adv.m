@@ -1,5 +1,5 @@
 function [Q,x,t,cons] = adv(xSteps,ratio,Tend,alpha,epsilon)
-%Problem 2.1 Lax-Friedrich method
+%Problem 2.1 Lax-Friedrich method for non linear problem
 
 %given variables
 L = 10;

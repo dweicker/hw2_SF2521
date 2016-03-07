@@ -1,3 +1,5 @@
+\subsection{Linearization}
+
 The shallow water equation can be written in quasilinear form as \begin{align*}
 u_t + f'(u) u_x = 0
 \end{align*}
@@ -27,7 +29,7 @@ g & 0
 \end{align*}
 We can see easily $f'(u)$ has eigenvalues $\lambda_{1,2} = \pm \sqrt{9.61} = \pm 3.1$ which are real. It also has a full set of eigenvectors i.e. $(1,3.1)^T$ and $(-1,3.1)$. This together confirm that the linear problem is hyperbolic. We also know that the wave speeds are the eigenvalues, so we have wave speeds $\pm \sqrt{9.61}$
 
-\subsection{Analytical Solution}
+\subsubsection{Analytical Solution}
 We have the PDE, 
 \begin{align*}
 q_t + f'(u) q_x = 0
@@ -95,13 +97,13 @@ We note that this solution does take into account any boundary conditions, and t
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.4]{analytical.eps}
+\includegraphics[scale=0.35]{analytical.eps}
 \caption{Analytical Solution of the Linear Problem}
 \label{anal}
 \end{center}
 \end{figure}
 
-\subsection{Numerical Solution of the Linear Problem}
+\subsubsection{Numerical Solution of the Linear Problem}
 To compare the results from the non-linear and linear problems, we compare the numerical solutions of the problems using the same method and the proper boundary conditions. The code for the numerical solution of the linear problem is almost exactly the same as for the linear problem, except the flux $f$. For the linear problem we compute the flux function from the information above. 
 \begin{align*}
 f'(u) = \begin{pmatrix}
@@ -116,7 +118,7 @@ gu_1
 We plot the linear and non-linear numerical solutions in \ref{compare} so they can be compared on the same plots. 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.4]{222comparison.eps}
+\includegraphics[scale=0.35]{222comparison.eps}
 \caption{Comparison of Linear and Non-linear Problems}
 \label{compare}
 \end{center}

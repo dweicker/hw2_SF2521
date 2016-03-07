@@ -1,5 +1,5 @@
 function [Q,x,t,cons] = noReflex(xSteps,ratio,Tend)
-%Problem 2.1 Lax-Friedrich method
+%Problem 2.1 Lax-Friedrich method with non reflexive conditions
 close all;
 %given variables
 L = 10;

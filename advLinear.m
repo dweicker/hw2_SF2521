@@ -1,5 +1,5 @@
 function [Q,x,t,cons] = advLinear(xSteps,ratio,Tend)
-%Problem 2.1 Lax-Friedrich method
+%Problem 2.1 Lax-Friedrich method for linear problem
 
 %given variables
 L = 10;

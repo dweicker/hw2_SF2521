@@ -43,7 +43,7 @@ $$U^n = S_{\Delta t}(t_n,0)g$$
 So the initial conditions $g$ is affected by $S$ and carried from $0$ to $t_n$. If now, $F^\nu \neq 0$, we can see by Duhamel's principle that we can look at the inhomogeneous term $F^\nu$ as an initial condition at time $t_\nu$. This initial condition is affected by the same $S$ but now carried from $t_\nu$ to $t_n$. The solution is then given by the sum of all those "initial conditions" carried to $t_n$.
 
 
-\subsection{Bound in the $h$-norm}
+\subsection{Bound in the $\Delta t$-norm}
 We now wish to show that 
 \begin{align*} 
 ||S_{\Delta t}(t_{\nu+1},t_{\nu})||_{\Delta t} \leq Ke^{a \Delta t} \implies ||U^n||_{\Delta t} \leq K(e^{at_n} ||g||_{\Delta t} + \int_0^{t_n} e^{a(t_n-s)} ds \max_{0\leq \nu \leq n-1} ||F^{\nu}||_{\Delta t}
