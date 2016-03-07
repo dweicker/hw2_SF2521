@@ -42,10 +42,10 @@ where
  V = \begin{pmatrix}
 1 & -1 \\
 3.1 & 3.1
-\end{pmatrix}, D= \begin{pmatrix}
+\end{pmatrix}, \enspace D= \begin{pmatrix}
 3.1 & 0 \\
 0 & -3.1
-\end{pmatrix},  \text{and} V^{-1} = \begin{pmatrix}
+\end{pmatrix},  \enspace \text{and} \enspace V^{-1} = \begin{pmatrix}
 0.5 & 0.1613 \\
 -0.5 & 0.1613
 \end{pmatrix}
@@ -54,7 +54,7 @@ where
 q(x,0) &= \begin{pmatrix}
 H + \epsilon e^{-(x-L/2)^2/w^2} \\
 0
-\end{pmatrix} 
+\end{pmatrix}, \quad \quad 0 \leq x \leq L
 \end{align*}
 Now, defining a new variable $r = V^{-1} q$ we have the decoupled system of equations
 \begin{align*}
@@ -90,9 +90,19 @@ q(x,1) = \frac{1}{2}\begin{pmatrix}
 3.1( \epsilon e^{-(x+3.1-L/2)^2/w^2} - \epsilon e^{-(x-3.1-L/2)^2/w^2})
 \end{pmatrix}
 \end{align*}
+which is plotted in \ref{anal}.
+We note that this solution does take into account any boundary conditions, and that the waves will not be reflected. However the waves have not hit the walls until after $T=1$ so our analytical solution still holds at $T=1$. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{analytical.eps}
+\caption{Analytical Solution of the Linear Problem}
+\label{anal}
+\end{center}
+\end{figure}
 
 \subsection{Numerical Solution of the Linear Problem}
-To compare the results from the non-linear and linear problems, we compare the numerical solutions of the problems using the same method. The code for the numerical solution of the linear problem is almost exactly the same as for the linear problem, except the flux $f$. For the linear problem we compute the flux function from the information above. 
+To compare the results from the non-linear and linear problems, we compare the numerical solutions of the problems using the same method and the proper boundary conditions. The code for the numerical solution of the linear problem is almost exactly the same as for the linear problem, except the flux $f$. For the linear problem we compute the flux function from the information above. 
 \begin{align*}
 f'(u) = \begin{pmatrix}
 0 & 1 \\
@@ -103,3 +113,12 @@ u_2 \\
 gu_1
 \end{pmatrix}
 \end{align*}
+We plot the linear and non-linear numerical solutions in \ref{compare} so they can be compared on the same plots. 
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.4]{222comparison.eps}
+\caption{Comparison of Linear and Non-linear Problems}
+\label{compare}
+\end{center}
+\end{figure}
+The first thing we can see is that the waves from the linear solution are totally symmetrical. This is in contrast to the non-linear problem, in which the waves are already noticeably unsymmetrical at $T=1$. The second difference that we notice is that the waves in the linear case retain their shape before and after collisions. In the non-linear case, this is not true, as there is effects from the collisions. 

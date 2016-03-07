@@ -1,0 +1,13 @@
+ratio = 0.322;
+xSteps = 100;
+dx = 10/xSteps;
+dt = ratio*dx;
+
+[Q,x,t,cons] = advLinear(xSteps,ratio,4);
+figure(2)
+T = [0 0.5 1 1.5 2 2.5 3 3.5 4];
+for i = 1:9
+    subplot(3,3,i);
+    titre = sprintf('Height for T = %f', T(i)*4/(length(t)-1));
+    plot(x,Q(:,T(i)+1));axis([0 10 1 1.11]);xlabel('x');title(titre);
+end
