@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.4)  7 MAR 2016 17:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.4)  7 MAR 2016 17:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1523,11 +1523,11 @@ l.81
 l.81 
       <./eps04-eps-converted-to.pdf> <./eps08-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <alpha.eps>
-(epstopdf)                    date: 2016-03-06 22:44:18
-(epstopdf)                    size: 13589 bytes
+(epstopdf)                    date: 2016-03-07 17:31:49
+(epstopdf)                    size: 17650 bytes
 (epstopdf)             Output file: <alpha-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-03-06 22:44:52
-(epstopdf)                    size: 7996 bytes
+(epstopdf)                    date: 2016-03-07 17:31:53
+(epstopdf)                    size: 9803 bytes
 (epstopdf)             Command: <repstopdf --outfile=alpha-eps-converted-to.pdf
  alpha.eps>
 (epstopdf)             \includegraphics on input line 89.
@@ -1630,7 +1630,7 @@ exmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2014/texmf-dist/fo
 nts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/
 public/lm/lmsy8.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb>
-Output written on main.pdf (9 pages, 495230 bytes).
+Output written on main.pdf (9 pages, 497070 bytes).
 PDF statistics:
  244 PDF objects out of 1000 (max. 8388607)
  181 compressed objects within 2 object streams

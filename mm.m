@@ -1,7 +1,7 @@
 close all;
 
 col = {'b-','g-','r-','k-','m-'};
-xSteps = 100;
+xSteps = 250;
 dx = 10/xSteps;
 C = [0.5 0.7 1 1.2 1.5];
 for j = 1:5
